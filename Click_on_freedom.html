@@ -1,0 +1,41 @@
+<html>
+<head>
+<title> Abandoned Hospital </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage freedomDoor;
+PImage t;
+
+void setup()
+{
+
+size( 1265, 620 );
+background(0,0,0);
+frameRate( 30 );
+
+freedomDoor = loadImage("images/freedomdoor.jpeg");
+t = loadImage("images/text.png");
+
+}
+
+
+void draw()
+{
+
+text(mouseX,10,10);
+text(mouseY,10,40);
+image(freedomDoor,802,0);
+
+
+}
+
+</script>
+<canvas id="mycanvas"></canvas>505,495
+</head>
+
+<body>
+
+</body>
+</html>
+

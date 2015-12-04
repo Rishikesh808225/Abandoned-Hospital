@@ -1,0 +1,291 @@
+<html>
+<head>
+<title> Abandoned Hospital </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage elevator;
+PImage hint2;
+PImage passage2;
+PImage keypad;
+PImage asterick;
+int z;
+int countClick;
+int correctValue;
+
+boolean first;//If a number is pressed or not and inserts the first asterisk. 
+boolean second;//If a number is pressed or not and inserts the second asterisk. 
+boolean third;//If a number is pressed or not and inserts the third asterisk. 
+boolean fourth;//If a number is pressed or not and inserts the fourth asterisk. 
+
+boolean code1;//Holds the info of the correct code digit being pressed. 0
+boolean code2;//Holds the info of the correct code digit being pressed. 8
+boolean code3;//Holds the info of the correct code digit being pressed. 5
+boolean code4;//Holds the info of the correct code digit being pressed. 2
+
+boolean incorrect1;
+boolean incorrect2;
+boolean incorrect3;
+boolean incorrect4;
+int y;//For incorrect password. 
+
+void setup()
+{
+
+size( 1265, 620 );
+background(0,0,0);
+frameRate( 30 );
+
+elevator = loadImage("images/elevator.png");
+hint2 = loadImage("images/hint2.png");
+passage2 = loadImage("images/passage1.png");
+keypad = loadImage("images/keypad.png");
+z = 1;
+asterick = loadImage("images/asterick.png");
+first = false;
+second = false;
+third = false;
+fourth = false;	
+code1 = false;
+code2 = false;
+code3 = false;
+code4 = false;	
+incorrect1 = false;
+incorrect2 = false;
+incorrect3 = false;
+incorrect4 = false;
+y = 0;
+countClick = 0;
+correctValue = 0;
+
+}
+
+
+void draw()
+{
+
+background(0,0,0);
+text(mouseX,10,10);
+text(mouseY,10,40);
+text(countClick,10,50);
+text(correctValue,10,60);
+image(passage2,5,5);
+image(keypad,937,159);
+rect(937,49,323,60);
+image(elevator,331,0);
+
+		if(mouseX > 450 && mouseX < 523 &&
+			mouseY > 270 && mouseY < 345)
+			{
+				image(hint2,480,110);
+			}
+
+//1
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1043 && mouseX > 992 &&
+		   mouseY < 263 && mouseY > 220 && z == 1)
+		   {
+		  		countClick = countClick + 1
+		  		z = z + 1
+		   }
+	}
+	
+	//2
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1125 && mouseX > 1074 &&
+		   mouseY < 263 && mouseY > 220 && z == 1)
+		   {
+		   		if(countClick == 0)
+		   			{				  		
+		   				correctValue = correctValue + 2000;
+		   				z = z + 1
+		   			}	
+				countClick = countClick + 1;
+		   		
+		   }
+	}
+	
+	//3
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1207 && mouseX > 1156 &&
+		   mouseY < 263 && mouseY > 220 && z == 1)
+		   {
+		   		countClick = countClick + 1
+		   		z = z + 1
+		   }
+	}
+	
+	//4
+	if (mousePressed == true && mouseButton == LEFT && z ==1)
+	{  
+		if(mouseX < 1040 && mouseX > 989 &&
+		   mouseY < 340 && mouseY > 297 && z == 1)
+		   {
+		   		if(countClick == 1)
+		   		{
+					correctValue = correctValue + 400
+					z = z + 1
+				}
+	  			countClick = countClick + 1
+		   }
+	}
+	
+	//5
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1124 && mouseX > 1073 &&
+		   mouseY < 340 && mouseY > 297 && z == 1)
+		   {
+		   		countClick = countClick + 1
+		   		z = z + 1
+		   }
+	}
+	
+	//6
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1206 && mouseX> 1155 &&
+		   mouseY < 340 && mouseY > 297 && z == 1)
+		   {
+				countClick = countClick + 1
+				z = z + 1
+		   }
+	}
+	
+	//7
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1040 && mouseX > 989 &&		
+		   mouseY < 419 && mouseY > 374 && z == 1)
+		   {
+		   		if(countClick == 3)
+		   		  {
+		   		  		correctValue = correctValue + 7
+		   				z = z + 1
+						countClick = countClick + 1
+		   			}
+		   }
+	}
+	
+	//8
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1124 && mouseX > 1073 &&
+		   mouseY < 425 && mouseY > 374 && z == 1)
+		   {
+		   		countClick = countClick + 1
+		   		z = z + 1
+		   }
+	}
+	
+	//9
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1206 && mouseX > 1155 &&
+		   mouseY < 425 && mouseY > 374 && z == 1)
+		   {
+				countClick = countClick + 1
+				z = z + 1
+		   }
+	}
+	
+	//*
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1041 && mouseX > 989 &&
+		   mouseY < 496 && mouseY > 451 && z == 1)
+		   {
+		   		countClick = countClick + 1
+		   		z = z + 1
+		   }
+	}
+	
+	//0
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1124 && mouseX > 1073 &&
+			mouseY < 501 && mouseY > 450 && z == 1)
+		   {
+		   		if(countClick == 2)
+		   		{
+					z = z + 1
+		   		}
+				countClick = countClick + 1
+		   }
+	}
+	
+	//#
+	if (mousePressed == true && mouseButton == LEFT && z == 1)
+	{  
+		if(mouseX < 1206 && mouseX > 1155 &&
+		   mouseY < 502 && mouseY > 451 && z == 1)
+		   {
+		   		countClick = countClick + 1
+		   		z = z + 1
+		   }
+	}
+	
+	if(mousePressed == false)
+	{
+		z = 1;
+	}
+	
+	if(correctValue == 2407)
+		{
+			link("Click_on_freedom.html");
+		}
+	
+	
+	
+	if (countClick == 1)
+	{
+		image(asterick,937,49);
+	}
+	
+	if (countClick == 2)
+	{
+		image(asterick,937,49);
+		image(asterick,1017.75,49);
+	}
+	
+	if (countClick == 3)
+	{	
+		image(asterick,937,49);
+		image(asterick,1017.75,49);	
+		image(asterick,1098.5,49);
+	}
+	
+	if (countClick == 4)
+	{
+		image(asterick,937,49);
+		image(asterick,1017.75,49);	
+		image(asterick,1098.5,49);	
+		image(asterick,1179.25,49);
+	}
+	
+	if (countClick == 4 && correctValue != 2407)
+		{
+			link("index3.html");
+		}
+	
+
+
+	
+
+	
+
+
+}
+
+</script>
+<canvas id="mycanvas"></canvas>505,495
+</head>
+
+<body>
+
+</body>
+</html>
+

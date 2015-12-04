@@ -1,0 +1,267 @@
+<html>
+<head>
+<title> Abandoned Hospital </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+int z;
+int countClickC;
+int countClickL;
+int countClickO;
+int countClickS;
+int countClickE;
+int countClickT;
+PImage roomdoor;
+PImage passage;
+PImage hint1;
+PImage a;
+PImage c;
+PImage d;
+PImage l;
+PImage o;
+PImage p;
+PImage x;
+PImage s;
+PImage r;
+PImage u;
+PImage e;
+PImage g; 
+PImage h;
+PImage y;
+PImage f;
+PImage q;
+PImage t;
+boolean f1;
+boolean f2;
+boolean f3;
+boolean f4;
+
+void setup()
+{
+
+size( 1265, 620 );
+background(0,0,0);
+frameRate( 30 );
+z = 0;
+roomdoor = loadImage("images/roomdoor.jpg");
+passage = loadImage("images/passage.png");
+hint1 = loadImage("images/hint1.png");
+a = loadImage("images/a.png");
+c = loadImage("images/c.png");
+d = loadImage("images/d.png");
+l = loadImage("images/l.png");
+o = loadImage("images/o.png");
+p = loadImage("images/p.png");
+x = loadImage("images/x.png");
+s = loadImage("images/s.png");
+r = loadImage("images/r.png");
+u = loadImage("images/u.png");
+e = loadImage("images/e.png");
+g = loadImage("images/g.png");
+h = loadImage("images/h.png");
+y = loadImage("images/y.png");
+f = loadImage("images/f.png");
+q = loadImage("images/q.png");
+t = loadImage("images/t.png");
+f1 = false;
+f2 = false;
+f3 = false;
+f4 = false;
+aa = 0;
+countClickC = 0;
+countClickL = 0;
+countClickO = 0;
+countClickS = 0;
+countClickE = 0;
+countClickT = 0;
+
+}
+
+
+void draw()
+{
+
+	background(0,0,0);
+	text(mouseX,10,10)
+	text(mouseY,10,40)
+	image(roomdoor,412,0);
+	image(passage,0,0);
+	text(countClickL,10,80);
+
+	if(mouseX > 591 && mouseY > 338 &&
+		mouseX < 678 && mouseY < 397)
+	{
+		image(hint1,480,310)
+	}
+	
+	if(countClickC==0){image(a,885,12)}
+	if(countClickC==1){image(d,885,12)}
+	if(countClickC==2){image(c,885,12)}
+	if(countClickC==3){image(l,885,12)}
+	
+	if(countClickL==0){image(x,885,112)}
+	if(countClickL==1){image(p,885,112)}
+	if(countClickL==2){image(o,885,112)}
+	if(countClickL==3){image(l,885,112)}
+	
+	if(countClickO==0){image(o,885,212)}
+	if(countClickO==1){image(s,885,212)}
+	if(countClickO==2){image(r,885,212)}
+	if(countClickO==3){image(u,885,212)}
+	
+	if(countClickS==0){image(h,885,312)}
+	if(countClickS==1){image(g,885,312)}
+	if(countClickS==2){image(s,885,312)}
+	if(countClickS==3){image(e,885,312)}
+	
+	if(countClickE==0){image(y,885,412)}
+	if(countClickE==1){image(c,885,412)}
+	if(countClickE==2){image(l,885,412)}
+	if(countClickE==3){image(e,885,412)}	
+	
+	if(countClickT==0){image(q,885,512)}
+	if(countClickT==1){image(t,885,512)}
+	if(countClickT==2){image(e,885,512)}
+	if(countClickT==3){image(f,885,512)}
+	
+	//1st Line 
+	//A-L
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 12 && mouseY < 112)
+				{	
+					countClickC = countClickC + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickC == 4)
+		{
+			countClickC = 0;
+		}	
+		
+		
+	//2nd Line 
+	//X-L
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 112 && mouseY < 212)
+				{	
+					countClickL = countClickL + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickL == 4)
+		{
+			countClickL = 0;
+		}	
+		
+		
+	//3rd Line 
+	//O-U
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 212 && mouseY < 312)
+				{	
+					countClickO = countClickO + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickO == 4)
+		{
+			countClickO = 0;
+		}	
+		
+
+	//4th Line 
+	//H-E
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 312 && mouseY < 412)
+				{	
+					countClickS = countClickS + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickS == 4)
+		{
+			countClickS = 0;
+		}	
+		
+		
+	//5th Line 
+	//Y-E
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 412 && mouseY < 512)
+				{	
+					countClickE = countClickE + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickE == 4)
+		{
+			countClickE = 0;
+		}	
+		
+		
+	//6th Line 
+	//Q-F
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+			if (z == 0 && mouseX > 885 && mouseX < 985 && mouseY > 512 && mouseY < 612)
+				{	
+					countClickT = countClickT + 1;
+					z = z + 1;
+				}	
+		}
+	if (mousePressed == false)
+		{
+			z = 0;
+		}
+	if (countClickT == 4)
+		{
+			countClickT = 0;
+		}		
+		
+	if (countClickC == 2 && countClickL ==	3 && countClickO == 0 && countClickS == 2 && countClickE == 3 && countClickT == 2)
+	{
+		link("index3.html");
+	}
+			
+				
+		
+		
+				
+}
+
+
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
+

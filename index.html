@@ -1,0 +1,52 @@
+<html>
+<head>
+<title> Abandoned Hospital </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage bedroomdoor;
+PImage intro;
+PImage cont;
+
+void setup()
+{
+
+size( 1265, 620 );
+background(0,0,0);
+frameRate( 30 );
+
+bedroomdoor = loadImage("images/roomdoor.jpg");
+intro = loadImage("images/intro.png");
+cont = loadImage("images/continue.png");
+
+}
+
+
+void draw()
+{
+
+background(0,0,0);
+text(mouseX,10,10);
+text(mouseY,10,40);
+image(intro,0,0);
+image(cont,382,400);
+
+if(mousePressed == true && mouseButton == LEFT)
+	{
+		if(mouseX > 505 && mouseX < 755 &&
+			mouseY > 495 && mouseY < 560)
+			{
+				link("index2.html");
+			}
+	}
+}
+
+</script>
+<canvas id="mycanvas"></canvas>505,495
+</head>
+
+<body>
+
+</body>
+</html>
+
