@@ -74,11 +74,28 @@ image(keypad,937,159);
 rect(937,49,323,60);
 image(elevator,331,0);
 
-		if(mouseX > 450 && mouseX < 523 &&
-			mouseY > 270 && mouseY < 345)
-			{
-				image(hint2,480,110);
-			}
+	if(mouseX > 450 && mouseX < 523 &&
+		mouseY > 270 && mouseY < 345)
+		{
+			image(hint2,480,110);
+		}
+		
+	if ((mouseX > 450 && mouseX < 523 && mouseY > 270 && mouseY < 345) || (mouseX < 1043 && mouseX > 992 && mouseY < 263 && mouseY > 220) ||
+		(mouseX < 1125 && mouseX > 1074 && mouseY < 263 && mouseY > 220) || (mouseX < 1207 && mouseX > 1156 && mouseY < 263 && mouseY > 220) || 
+		(mouseX < 1040 && mouseX > 989 && mouseY < 340 && mouseY > 297) || (mouseX < 1124 && mouseX > 1073 && mouseY < 340 && mouseY > 297) ||
+		(mouseX < 1206 && mouseX> 1155 && mouseY < 340 && mouseY > 297) || (mouseX < 1040 && mouseX > 989 && mouseY < 419 && mouseY > 374) ||
+		(mouseX < 1124 && mouseX > 1073 && mouseY < 425 && mouseY > 374) || (mouseX < 1206 && mouseX > 1155 && mouseY < 425 && mouseY > 374) ||
+		(mouseX < 1041 && mouseX > 989 && mouseY < 496 && mouseY > 451) || (mouseX < 1124 && mouseX > 1073 && mouseY < 501 && mouseY > 450) ||
+		(mouseX < 1206 && mouseX > 1155 && mouseY < 502 && mouseY > 451))
+		{
+			cursor(HAND);
+		}
+	else
+		{
+			cursor(ARROW);
+		}
+			
+		
 
 //1
 	if (mousePressed == true && mouseButton == LEFT && z == 1)

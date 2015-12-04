@@ -6,6 +6,8 @@
 
 PImage freedomDoor;
 PImage t;
+PImage finalHint;
+int z;
 
 void setup()
 {
@@ -16,6 +18,8 @@ frameRate( 30 );
 
 freedomDoor = loadImage("images/freedomdoor.jpeg");
 t = loadImage("images/text.png");
+finalHint = loadImage("images/finalhint.png");
+z = 0;
 
 }
 
@@ -23,10 +27,27 @@ t = loadImage("images/text.png");
 void draw()
 {
 
+background(0,0,0);
+
 text(mouseX,10,10);
 text(mouseY,10,40);
 image(freedomDoor,802,0);
+image(finalHint,50,0);
 
+if (mousePressed == true && mouseButton == LEFT && z == 0)
+	{
+		if (mouseX > 271 && mouseY > 111 &&
+			mouseX < 411 && mouseY < 135)
+			{
+				link("index5.html");
+				z = z + 1;
+			}
+	}
+	
+if (mousePressed == false)
+	{
+		z = 0;
+	}
 
 }
 

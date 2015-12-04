@@ -94,6 +94,18 @@ void draw()
 		image(hint1,480,310)
 	}
 	
+	if ((mouseX > 591 && mouseY > 338 && mouseX < 678 && mouseY < 397) || (mouseX > 885 && mouseX < 985 && mouseY > 12 && mouseY < 112) ||
+		(mouseX > 885 && mouseX < 985 && mouseY > 112 && mouseY < 212) || (mouseX > 885 && mouseX < 985 && mouseY > 212 && mouseY < 312) ||
+		(mouseX > 885 && mouseX < 985 && mouseY > 312 && mouseY < 412) || (mouseX > 885 && mouseX < 985 && mouseY > 412 && mouseY < 512) ||
+		(mouseX > 885 && mouseX < 985 && mouseY > 512 && mouseY < 612))
+		{
+			cursor(HAND);
+		}
+	else 
+		{
+			cursor(ARROW);
+		}		
+	
 	if(countClickC==0){image(a,885,12)}
 	if(countClickC==1){image(d,885,12)}
 	if(countClickC==2){image(c,885,12)}
@@ -123,7 +135,7 @@ void draw()
 	if(countClickT==1){image(t,885,512)}
 	if(countClickT==2){image(e,885,512)}
 	if(countClickT==3){image(f,885,512)}
-	
+
 	//1st Line 
 	//A-L
 	if (mousePressed == true && mouseButton == LEFT)
@@ -141,8 +153,8 @@ void draw()
 	if (countClickC == 4)
 		{
 			countClickC = 0;
-		}	
-		
+		}
+
 		
 	//2nd Line 
 	//X-L
@@ -184,6 +196,8 @@ void draw()
 		}	
 		
 
+		
+
 	//4th Line 
 	//H-E
 	if (mousePressed == true && mouseButton == LEFT)
@@ -203,6 +217,7 @@ void draw()
 			countClickS = 0;
 		}	
 		
+	
 		
 	//5th Line 
 	//Y-E
@@ -222,6 +237,7 @@ void draw()
 		{
 			countClickE = 0;
 		}	
+	
 		
 		
 	//6th Line 

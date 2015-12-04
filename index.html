@@ -31,6 +31,16 @@ text(mouseY,10,40);
 image(intro,0,0);
 image(cont,382,400);
 
+if(mouseX > 505 && mouseX < 755 &&
+	mouseY > 495 && mouseY < 560)
+	{
+		cursor(HAND);
+	}
+else
+	{
+		cursor(ARROW);
+	}
+
 if(mousePressed == true && mouseButton == LEFT)
 	{
 		if(mouseX > 505 && mouseX < 755 &&
